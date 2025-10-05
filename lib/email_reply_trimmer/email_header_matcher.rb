@@ -7,7 +7,7 @@ class EmailHeaderMatcher
     # English
     ["Sent", "Date"],
     # French
-    ["Date", "Le"],
+    ["Date", "Le", "Envoyé"],
     # German
     ["Gesendet"],
     # Portuguese
@@ -19,7 +19,7 @@ class EmailHeaderMatcher
     # Italian
     ["Data"],
     # Dutch
-    ["Datum"],
+    ["Datum", "Verzonden"],
     # Swedish
     ["Skickat"],
     # Chinese

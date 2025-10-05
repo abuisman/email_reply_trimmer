@@ -22,6 +22,7 @@ class SignatureMatcher
     /^[[:blank:]]*[\(<]*Sent (from|via|with|by) .+[\)>]*/i,
     /^[[:blank:]]*From my .{1,20}/i,
     /^[[:blank:]]*Get Outlook for /i,
+    /^[[:blank:]]*Sent from Outlook for /i,
     # French
     /^[[:blank:]]*Envoyé depuis (mon|Yahoo Mail)/i,
     # German
@@ -37,6 +38,7 @@ class SignatureMatcher
     /^[[:blank:]]*Enviado desde mi /i,
     # Dutch
     /^[[:blank:]]*Verzonden met /i,
+    /^[[:blank:]]*Verzonden vanuit /i,
     /^[[:blank:]]*Verstuurd vanaf mijn /i,
     # Swedish
     /^[[:blank:]]*från min /i,

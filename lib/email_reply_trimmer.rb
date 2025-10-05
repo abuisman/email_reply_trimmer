@@ -44,6 +44,25 @@ class EmailReplyTrimmer
     # create a string of characters, one per line, according to the line content
     pattern = lines.map { |l| identify_line_content(l) }.join
 
+    # General rule: forwarded-within-forwarded without user text before the first
+    # forwarded marker means there is no user content to keep. Example: a user
+    # forwards an email that itself is just a forward, without adding any text.
+    # In this case, return blank content.
+    if pattern.start_with?(EMBEDDED)
+      first_embedding_index = pattern.index(EMBEDDED)
+      second_embedding_index = pattern.index(EMBEDDED, first_embedding_index + 1)
+
+      if second_embedding_index
+        first_is_forward_marker = EmbeddedEmailMatcher::FORWARDED_EMAIL_REGEXES.any? { |r| lines[first_embedding_index] =~ r }
+        second_is_forward_marker = EmbeddedEmailMatcher::FORWARDED_EMAIL_REGEXES.any? { |r| lines[second_embedding_index] =~ r }
+
+        if first_is_forward_marker && second_is_forward_marker
+          pattern = ""
+          lines = []
+        end
+      end
+    end
+
     # remove everything after the first delimiter
     if pattern =~ /d/
       index = pattern =~ /d/

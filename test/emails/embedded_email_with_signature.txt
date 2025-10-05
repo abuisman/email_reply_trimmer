@@ -1,0 +1,19 @@
+Thanks for your message. This email thread is about Company/Brand charging stations and isn't related to an Acme booking, so we won't step in here. If you meant to contact Acme Support about a booking or rental, please forward the details (including your booking code) and we'll help you right away.
+
+Have a great day,
+James
+
+TechSupport - The greatest AI ever!
+info@techsupport.com
+
+TechSupport-logo.png
+
+On Fri, 3 Oct 2025 at 17:13, Robert Johnson <robert.johnson@brand.com> wrote:
+
+Hello Peter, Anne
+
+
+
+I have forwarded the email from colleague Mike.
+
+We see that the settings in our back end are configured correctly. This means that no direct invoices should be sent from CMS anymore.
